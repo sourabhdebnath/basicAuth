@@ -44,14 +44,14 @@ app.get('/', function(req, res) {
 ```
 ## Special cases
 
-1. Without domain
+> Without domain
 
 ```js
 \\mike:test
 // => {domain: '', name: 'mike', pass: 'test'}
 ```
 
-2. Wothout password
+> Without password
 
 ```js
 abc\\mike:
