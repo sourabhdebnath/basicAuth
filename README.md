@@ -11,7 +11,7 @@ $ npm install node-basic-auth
 ```js
 var bAuth = require('mode-basic-auth')
 ```
-#Usage
+## Usage
 
 ```js
 var bAuth = require('node-basic-auth')
@@ -19,7 +19,7 @@ var user = bAuth(req)
 // => { domain: 'abc', name: 'john', pass: 'test' }
 ```
 
-# License
+## License
 
 [MIT](LICENSE)
 
