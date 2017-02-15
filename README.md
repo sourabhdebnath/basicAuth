@@ -34,13 +34,13 @@ var app = express();
 var bAuth = require('node-basic-auth');
 app.get('/', function(req, res) {
 	var cred = bAuth(req, res);
-	if(!cred || !cred.domain = 'abc' || cred.name != 'mike' || cred.pass != 'test') {
+	if(!cred || cred.domain != 'abc' || cred.name != 'mike' || cred.pass != 'test') {
        //Auth failed
     } else {
        //Auth success
     }
-}
 })
+app.listen(3000);
 ```
 ## Special cases
 
