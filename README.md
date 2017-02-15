@@ -1,5 +1,12 @@
 # node-basic-auth
-Basic authentication parser for Node Projects
+Basic authentication parser for NodeJS Projects. Supports domain/team specific basic authentication.
+
+## Example format
+```js
+domain\name:pass
+// =>
+// => abc\mike:test => { domain: 'abc', name: 'mike', pass: 'test' }
+```
 
 ## Installation
 ```
@@ -15,10 +22,26 @@ var bAuth = require('mode-basic-auth')
 
 ```js
 var bAuth = require('node-basic-auth')
-var user = bAuth(req)
-// => { domain: 'abc', name: 'john', pass: 'test' }
+var cred = bAuth(req)
+// => { domain: 'abc', name: 'mike', pass: 'test' }
 ```
 
+## Usage using expressJS
+
+```js
+var express = require('express');
+var app = express();
+var bAuth = require('node-basic-auth');
+app.get('/', function(req, res) {
+	var cred = bAuth(req, res);
+	if(!cred || !cred.domain = 'abc' || cred.name != 'mike' || cred.pass != 'test') {
+       //Auth failed
+    } else {
+       //Auth success
+    }
+}
+})
+```
 ## License
 
 [MIT](LICENSE)
