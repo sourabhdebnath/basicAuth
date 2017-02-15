@@ -3,9 +3,9 @@ Basic authentication parser for NodeJS Projects. Supports domain/team specific b
 
 ## Example format
 ```js
-domain\name:pass
+domain\\name:pass
 // =>
-// => abc\mike:test => { domain: 'abc', name: 'mike', pass: 'test' }
+// => abc\\mike:test => { domain: 'abc', name: 'mike', pass: 'test' }
 ```
 
 ## Installation
@@ -41,6 +41,21 @@ app.get('/', function(req, res) {
     }
 }
 })
+```
+## Special cases
+
+1. Without domain
+
+```js
+\\mike:test
+// => {domain: '', name: 'mike', pass: 'test'}
+```
+
+2. Wothout password
+
+```js
+abc\\mike:
+// => {domain: 'abc', name: 'mike', pass: ''}
 ```
 ## License
 
