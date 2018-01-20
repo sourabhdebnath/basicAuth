@@ -16,7 +16,7 @@ $ npm install node-basic-auth
 ## Import
 
 ```js
-var bAuth = require('mode-basic-auth')
+var bAuth = require('node-basic-auth')
 ```
 ## Usage
 
